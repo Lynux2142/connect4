@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/01 18:23:00 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/02 14:03:37 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/02/02 14:13:33 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,7 +184,19 @@ int		main(void)
 		print_player_line(i.x);
 		choix = check_col_num(tab, i.x);
 		while (tab[i.y][ft_atoi(choix) - 1] != 0)
+		{
 			--i.y;
+			if (i.y < 0)
+			{
+				print(tab);
+				ft_putstr("\nVeuillez choisir une autre colone");
+				free(choix);
+				print_player_line(i.x);
+				get_next_line(0, &choix);
+				i.y = 5;
+				ft_putchar('\n');
+			}
+		}
 		tab[i.y][ft_atoi(choix) - 1] = i.x;
 		free(choix);
 		print(tab);
