@@ -76,11 +76,9 @@ int		check_map(int tab[6][7])
 			if (tab[i.y][i.x] == 0)
 				return (0);
 	}
+	ft_putendl("\nEgalite !");
 	return (1);
 }
-
-//void	remplissage(int tab[6][7], int value)
-//{}
 
 void	print_player_line(int i)
 {
