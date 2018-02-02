@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/01 18:23:00 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/02 13:50:20 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/02/02 14:03:37 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,18 +148,20 @@ int		parse_win(int tab[6][7])
 	return (0);
 }
 
-char	*check_col_num(int i)
+char	*check_col_num(int tab[6][7], int i)
 {
 	char *choix;
 
 	get_next_line(0, &choix);
 	while (ft_atoi(choix) < 1 || ft_atoi(choix) > 7)
 	{
+		print(tab);
 		ft_putstr("\nVeuillez entrer un chiffre entre 1 et 7");
 		free(choix);
 		print_player_line(i);
 		get_next_line(0, &choix);
 	}
+	ft_putchar('\n');
 	return (choix);
 }
 
@@ -167,29 +169,27 @@ int		main(void)
 {
 	char	*choix;
 	int		tab[6][7];
-	int		i;
-	int		j;
+	t_coord	i;
 	int		round;
 
 	round = -1;
-	i = 1;
+	i.x = 1;
 	creation(tab);
 	print(tab);
 	while (!check_map(tab))
 	{
 		if (++round > 6)
 			parse_win(tab);
-		j = 5;
-		print_player_line(i);
-		choix = check_col_num(i);
-		ft_putchar('\n');
-		while (tab[j][ft_atoi(choix) - 1] != 0)
-			--j;
-		tab[j][ft_atoi(choix) - 1] = i;
+		i.y = 5;
+		print_player_line(i.x);
+		choix = check_col_num(tab, i.x);
+		while (tab[i.y][ft_atoi(choix) - 1] != 0)
+			--i.y;
+		tab[i.y][ft_atoi(choix) - 1] = i.x;
 		free(choix);
 		print(tab);
-		i = (i % 2 == 0) ? 0 : i;
-		++i;
+		i.x = (i.x % 2 == 0) ? 0 : i.x;
+		++i.x;
 	}
 	return (0);
 }
