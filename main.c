@@ -163,6 +163,21 @@ char	*check_col_num(int tab[6][7], int i)
 	return (choix);
 }
 
+char	*check_col_choice(int tab[6][7], char *choix, t_coord *i)
+{
+	if (--i->y < 0)
+	{
+		print(tab);
+		ft_putstr("\nVeuillez choisir une autre colone");
+		free(choix);
+		print_player_line(i->x);
+		choix = check_col_num(tab, i->x);
+		i->y = 5;
+		ft_putchar('\n');
+	}
+	return (choix);
+}
+
 int		main(void)
 {
 	char	*choix;
@@ -182,24 +197,11 @@ int		main(void)
 		print_player_line(i.x);
 		choix = check_col_num(tab, i.x);
 		while (tab[i.y][ft_atoi(choix) - 1] != 0)
-		{
-			--i.y;
-			if (i.y < 0)
-			{
-				print(tab);
-				ft_putstr("\nVeuillez choisir une autre colone");
-				free(choix);
-				print_player_line(i.x);
-				get_next_line(0, &choix);
-				i.y = 5;
-				ft_putchar('\n');
-			}
-		}
+				choix = check_col_choice(tab, choix, &i);
 		tab[i.y][ft_atoi(choix) - 1] = i.x;
 		free(choix);
 		print(tab);
-		i.x = (i.x % 2 == 0) ? 0 : i.x;
-		++i.x;
+		i.x = (i.x++ % 2 == 0) ? 1 : i.x;
 	}
 	return (0);
 }
