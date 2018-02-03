@@ -40,8 +40,8 @@ char	*check_col_num(int tab[6][7], int i)
 		free(choix);
 		print_player_line(i);
 		get_next_line(0, &choix);
+		ft_putchar('\n');
 	}
-	ft_putchar('\n');
 	return (choix);
 }
 
