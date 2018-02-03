@@ -17,7 +17,7 @@
 NAME = puissance4
 
 SRCS = srcs/puissance4.c srcs/ft_print.c srcs/ft_check_win.c \
-	   srcs/ft_check_error.c
+	   srcs/ft_check_error.c srcs/ft_color.c
 
 OBJ = $(SRCS:.c=.o)
 

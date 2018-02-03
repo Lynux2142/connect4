@@ -40,7 +40,6 @@ char	*check_col_num(int tab[6][7], int i)
 		free(choix);
 		print_player_line(i);
 		get_next_line(0, &choix);
-		ft_putchar('\n');
 	}
 	return (choix);
 }
@@ -55,7 +54,6 @@ char	*check_col_choice(int tab[6][7], char *choix, t_coord *i)
 		print_player_line(i->x);
 		choix = check_col_num(tab, i->x);
 		i->y = 5;
-		ft_putchar('\n');
 	}
 	return (choix);
 }

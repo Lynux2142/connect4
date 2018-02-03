@@ -33,5 +33,9 @@ void	print_player_line(int i);
 int		check_map(int tab[6][7]);
 char	*check_col_num(int tab[6][7], int i);
 char	*check_col_choice(int tab[6][7], char *choix, t_coord *i);
+void	print_croix();
+void	print_rond();
+void	print_map();
+void	print_top();
 
 #endif

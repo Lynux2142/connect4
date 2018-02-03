@@ -12,48 +12,30 @@
 
 #include "puissance4.h"
 
-void	print_win(char joueur)
+void	print_croix()
 {
-	ft_putstr("\n Bravo ! le joueur ");
-	ft_putchar(joueur);
-	ft_putendl(" gagne !");
-	exit(0);
+	ft_putstr("\033[33m");
+	ft_putchar('x');
+	ft_putstr("\033[0m");
 }
 
-void	print(int tab[6][7])
+void	print_rond()
 {
-	t_coord	i;
-
-	ft_putchar('\n');
-	print_top();
-	i.y = -1;
-	while (++i.y < 6)
-	{
-		print_map();
-		i.x = -1;
-		while (++i.x < 7)
-		{
-			if (tab[i.y][i.x] == 0)
-				ft_putchar(' ');
-			else if (tab[i.y][i.x] == 1)
-				print_croix();
-			else if (tab[i.y][i.x] == 2)
-				print_rond();
-			print_map();
-		}
-		ft_putchar('\n');
-	}
-	ft_putendl(" 1 2 3 4 5 6 7 ");
+	ft_putstr("\033[31m");
+	ft_putchar('o');
+	ft_putstr("\033[0m");
 }
 
-void	print_player_line(int i)
+void	print_map()
 {
-	ft_putstr("\njoueur ");
-	ft_putnbr(i);
-	ft_putchar(' ');
-	if (i == 1)
-		ft_putstr("(x)");
-	else if (i == 2)
-		ft_putstr("(o)");
-	ft_putstr(": ");
+	ft_putstr("\033[34m");
+	ft_putchar('|');
+	ft_putstr("\033[0m");
+}
+
+void	print_top()
+{
+	ft_putstr("\033[34m");
+	ft_putendl(" _ _ _ _ _ _ _");
+	ft_putstr("\033[0m");
 }
