@@ -66,6 +66,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
+	@cp $(NAME) ../includes/
 	@printf "$(_CLEAR)$(_YELLOW) building - $(_GREEN)libft\n$(_END)"
 	@printf "$(_GREEN) Done.\n$(_END)$(_SHOW_CURS)"
 
@@ -80,6 +81,7 @@ clean:
 
 fclean: clean
 	@/bin/rm -f $(NAME)
+	@/bin/rm -f ../includes/$(NAME)
 
 re: fclean all
 
