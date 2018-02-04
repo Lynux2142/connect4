@@ -22,17 +22,26 @@ typedef struct	s_coord
 	int	y;
 }				t_coord;
 
-int		parse_win(int tab[6][7]);
-void	check_line(int tab[6][7], t_coord i);
-void	check_column(int tab[6][7], t_coord i);
-void	check_diagonal_left(int tab[6][7], t_coord i);
-void	check_diagonal_right(int tab[6][7], t_coord i);
-void	print_win(char joueur);
+typedef struct	s_info
+{
+	char		*choix;
+	int			tab[6][7];
+	int			round;
+	char		*j1;
+	char		*j2;
+}				t_info;
+
+int		parse_win(t_info *info);
+void	check_line(t_info *info, t_coord i);
+void	check_column(t_info *info, t_coord i);
+void	check_diagonal_left(t_info *info, t_coord i);
+void	check_diagonal_right(t_info *info, t_coord i);
+void	print_win(t_info *info, int joueur);
 void	print(int tab[6][7]);
-void	print_player_line(int i);
+void	print_player_line(t_info *info, int i);
 int		check_map(int tab[6][7]);
-char	*check_col_num(int tab[6][7], int i);
-char	*check_col_choice(int tab[6][7], char *choix, t_coord *i);
+char	*check_col_num(t_info *info, t_coord *i);
+char	*check_col_choice(t_info *info, t_coord *i);
 void	print_croix();
 void	print_rond();
 void	print_map();

@@ -25,29 +25,36 @@ void	creation(int tab[6][7])
 	}
 }
 
+void	player_creation(t_info *info)
+{
+	ft_putstr("pseudo joueur 1: ");
+	get_next_line(0, &info->j1);
+	ft_putstr("pseudo joueur 2: ");
+	get_next_line(0, &info->j2);
+}
+
 int		main(void)
 {
-	char	*choix;
-	int		tab[6][7];
+	t_info	info;
 	t_coord	i;
-	int		round;
 
-	round = -1;
+	info.round = -1;
 	i.x = 1;
-	creation(tab);
-	print(tab);
-	while (!check_map(tab))
+	player_creation(&info);
+	creation(info.tab);
+	print(info.tab);
+	while (!check_map(info.tab))
 	{
-		if (++round > 6)
-			parse_win(tab);
+		if (++info.round > 6)
+			parse_win(&info);
 		i.y = 5;
-		print_player_line(i.x);
-		choix = check_col_num(tab, i.x);
-		while (tab[i.y][ft_atoi(choix) - 1] != 0)
-				choix = check_col_choice(tab, choix, &i);
-		tab[i.y][ft_atoi(choix) - 1] = i.x;
-		free(choix);
-		print(tab);
+		print_player_line(&info, i.x);
+		info.choix = check_col_num(&info, &i);
+		while (info.tab[i.y][ft_atoi(info.choix) - 1] != 0)
+				info.choix = check_col_choice(&info, &i);
+		info.tab[i.y][ft_atoi(info.choix) - 1] = i.x;
+		free(info.choix);
+		print(info.tab);
 		i.x = (i.x++ % 2 == 0) ? 1 : i.x;
 	}
 	return (0);

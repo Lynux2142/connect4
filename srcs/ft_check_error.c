@@ -28,32 +28,32 @@ int		check_map(int tab[6][7])
 	return (1);
 }
 
-char	*check_col_num(int tab[6][7], int i)
+char	*check_col_num(t_info *info, t_coord *i)
 {
 	char *choix;
 
 	get_next_line(0, &choix);
 	while (ft_atoi(choix) < 1 || ft_atoi(choix) > 7)
 	{
-		print(tab);
+		print(info->tab);
 		ft_putstr("\nVeuillez entrer un chiffre entre 1 et 7");
 		free(choix);
-		print_player_line(i);
+		print_player_line(info, i->x);
 		get_next_line(0, &choix);
 	}
 	return (choix);
 }
 
-char	*check_col_choice(int tab[6][7], char *choix, t_coord *i)
+char	*check_col_choice(t_info *info, t_coord *i)
 {
 	if (--i->y < 0)
 	{
-		print(tab);
+		print(info->tab);
 		ft_putstr("\nVeuillez choisir une autre colone");
-		free(choix);
-		print_player_line(i->x);
-		choix = check_col_num(tab, i->x);
+		free(info->choix);
+		print_player_line(info, i->x);
+		info->choix = check_col_num(info, i);
 		i->y = 5;
 	}
-	return (choix);
+	return (info->choix);
 }
