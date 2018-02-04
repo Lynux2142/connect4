@@ -12,7 +12,39 @@
 
 #include "puissance4.h"
 
-int		parse_win(t_info *info)
+static void	check_line(t_info *inf, t_coord i)
+{
+	if (i.x <= 3 && inf->tab[i.y][i.x] == inf->tab[i.y][i.x + 1]
+			&& inf->tab[i.y][i.x + 1] == inf->tab[i.y][i.x + 2]
+			&& inf->tab[i.y][i.x + 2] == inf->tab[i.y][i.x + 3])
+		print_win(inf, (inf->tab[i.y][i.x] == 1) ? 1 : 2);
+}
+
+static void	check_column(t_info *inf, t_coord i)
+{
+	if (i.y <= 2 && inf->tab[i.y][i.x] == inf->tab[i.y + 1][i.x]
+			&& inf->tab[i.y + 1][i.x] == inf->tab[i.y + 2][i.x]
+			&& inf->tab[i.y + 2][i.x] == inf->tab[i.y + 3][i.x])
+		print_win(inf, (inf->tab[i.y][i.x] == 1) ? 1 : 2);
+}
+
+static void	check_diagonal_left(t_info *inf, t_coord i)
+{
+	if (i.x >= 3 && i.y <= 2 && inf->tab[i.y][i.x] == inf->tab[i.y + 1][i.x - 1]
+			&& inf->tab[i.y + 1][i.x - 1] == inf->tab[i.y + 2][i.x - 2]
+			&& inf->tab[i.y + 2][i.x - 2] == inf->tab[i.y + 3][i.x - 3])
+		print_win(inf, (inf->tab[i.y][i.x] == 1) ? 1 : 2);
+}
+
+static void	check_diagonal_right(t_info *inf, t_coord i)
+{
+	if (i.x <= 3 && i.y <= 2 && inf->tab[i.y][i.x] == inf->tab[i.y + 1][i.x + 1]
+			&& inf->tab[i.y + 1][i.x + 1] == inf->tab[i.y + 2][i.x + 2]
+			&& inf->tab[i.y + 2][i.x + 2] == inf->tab[i.y + 3][i.x + 3])
+		print_win(inf, (inf->tab[i.y][i.x] == 1) ? 1 : 2);
+}
+
+int			parse_win(t_info *info)
 {
 	t_coord	i;
 
@@ -32,36 +64,4 @@ int		parse_win(t_info *info)
 		}
 	}
 	return (0);
-}
-
-void	check_line(t_info *info, t_coord i)
-{
-	if (i.x <= 3 && info->tab[i.y][i.x] == info->tab[i.y][i.x + 1]
-			&& info->tab[i.y][i.x + 1] == info->tab[i.y][i.x + 2]
-			&& info->tab[i.y][i.x + 2] == info->tab[i.y][i.x + 3])
-		print_win(info, (info->tab[i.y][i.x] == 1) ? 1 : 2);
-}
-
-void	check_column(t_info *info, t_coord i)
-{
-	if (i.y <= 2 && info->tab[i.y][i.x] == info->tab[i.y + 1][i.x]
-			&& info->tab[i.y + 1][i.x] == info->tab[i.y + 2][i.x]
-			&& info->tab[i.y + 2][i.x] == info->tab[i.y + 3][i.x])
-		print_win(info, (info->tab[i.y][i.x] == 1) ? 1 : 2);
-}
-
-void	check_diagonal_left(t_info *info, t_coord i)
-{
-	if (i.x >= 3 && i.y <= 2 && info->tab[i.y][i.x] == info->tab[i.y + 1][i.x - 1]
-			&& info->tab[i.y + 1][i.x - 1] == info->tab[i.y + 2][i.x - 2]
-			&& info->tab[i.y + 2][i.x - 2] == info->tab[i.y + 3][i.x - 3])
-		print_win(info, (info->tab[i.y][i.x] == 1) ? 1 : 2);
-}
-
-void	check_diagonal_right(t_info *info, t_coord i)
-{
-	if (i.x <= 3 && i.y <= 2 && info->tab[i.y][i.x] == info->tab[i.y + 1][i.x + 1]
-			&& info->tab[i.y + 1][i.x + 1] == info->tab[i.y + 2][i.x + 2]
-			&& info->tab[i.y + 2][i.x + 2] == info->tab[i.y + 3][i.x + 3])
-		print_win(info, (info->tab[i.y][i.x] == 1) ? 1 : 2);
 }

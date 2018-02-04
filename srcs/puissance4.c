@@ -12,7 +12,7 @@
 
 #include "puissance4.h"
 
-void	creation(int tab[6][7])
+static void	creation(int tab[6][7])
 {
 	t_coord	i;
 
@@ -25,7 +25,7 @@ void	creation(int tab[6][7])
 	}
 }
 
-void	player_creation(t_info *info)
+static void	player_creation(t_info *info)
 {
 	ft_putstr("pseudo joueur 1: ");
 	get_next_line(0, &info->j1);
@@ -33,7 +33,7 @@ void	player_creation(t_info *info)
 	get_next_line(0, &info->j2);
 }
 
-int		main(void)
+int			main(void)
 {
 	t_info	info;
 	t_coord	i;

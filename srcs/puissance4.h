@@ -32,10 +32,6 @@ typedef struct	s_info
 }				t_info;
 
 int		parse_win(t_info *info);
-void	check_line(t_info *info, t_coord i);
-void	check_column(t_info *info, t_coord i);
-void	check_diagonal_left(t_info *info, t_coord i);
-void	check_diagonal_right(t_info *info, t_coord i);
 void	print_win(t_info *info, int joueur);
 void	print(int tab[6][7]);
 void	print_player_line(t_info *info, int i);
