@@ -16,9 +16,15 @@ void	print_win(t_info *info, int joueur)
 {
 	ft_putstr("\n Bravo ! le joueur ");
 	if (joueur == 1)
+	{
 		ft_putstr(info->j1);
+		ft_putstr(" (x)");
+	}
 	else if (joueur == 2)
+	{
 		ft_putstr(info->j2);
+		ft_putstr(" (o)");
+	}
 	ft_putendl(" gagne !");
 	exit(0);
 }
@@ -53,8 +59,14 @@ void	print_player_line(t_info *info, int i)
 {
 	ft_putstr("\njoueur ");
 	if (i == 1)
+	{
 		ft_putstr(info->j1);
+		ft_putstr(" (x)");
+	}
 	else if (i == 2)
+	{
 		ft_putstr(info->j2);
+		ft_putstr(" (o)");
+	}
 	ft_putstr(": ");
 }
