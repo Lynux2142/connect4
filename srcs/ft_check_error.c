@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:02:36 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/05 14:02:37 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/02/05 14:53:42 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		check_map(int tab[6][7])
 			if (tab[i.y][i.x] == 0)
 				return (0);
 	}
-	ft_putendl("\nEgalite !");
+	ft_putendl("\n Egalite !");
 	return (1);
 }
 

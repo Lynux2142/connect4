@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:03 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/05 14:03:05 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/02/05 14:55:09 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	print_win(t_info *info, int joueur)
 		ft_putstr(" (o)");
 	}
 	ft_putendl(" gagne !");
-	exit(0);
 }
 
 void	print(int tab[6][7])
@@ -57,7 +56,7 @@ void	print(int tab[6][7])
 
 void	print_player_line(t_info *info, int i)
 {
-	ft_putstr("\njoueur ");
+	ft_putstr("\n Joueur ");
 	if (i == 1)
 	{
 		ft_putstr(info->j1);

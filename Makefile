@@ -6,7 +6,7 @@
 #    By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/16 12:18:12 by lguiller          #+#    #+#              #
-#    Updated: 2018/02/05 12:05:51 by lguiller         ###   ########.fr        #
+#    Updated: 2018/02/05 14:46:11 by lguiller         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@
 NAME = puissance4
 
 SRCS = srcs/puissance4.c srcs/ft_print.c srcs/ft_check_win.c \
-	   srcs/ft_check_error.c srcs/ft_color.c
+	   srcs/ft_check_error.c srcs/ft_color.c srcs/ft_restart.c
 
 INCLUDES = includes/libft.h includes/puissance4.h
 
@@ -44,13 +44,16 @@ _CLEAR	=$ \033[2K
 ##   TARGETS    ##
 ##################
 
-.PHONY: all clean
+.PHONY: all libft clean
 
-all: $(NAME)
+all: libft $(NAME)
+
+libft:
+	@make all -C libft
 
 $(NAME): $(OBJ)
-	@make all -C libft
 	@gcc $(FLAGS) $(OBJ) ./libft/libft.a -o $(NAME)
+	@printf "$(_GREEN) Done.\n$(_END)"
 
 %.o: %.c
 	@gcc $(FLAGS) -I includes/ -c $^ -o $@

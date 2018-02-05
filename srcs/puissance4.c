@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:19 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/05 14:04:05 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/02/05 14:52:56 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,29 +33,38 @@ static void	player_creation(t_info *info)
 	get_next_line(0, &info->j2);
 }
 
+int			ft_puissance4(t_info *info)
+{
+	t_coord	i;
+
+	info->round = -1;
+	i.x = 1;
+	creation(info->tab);
+	print(info->tab);
+	while (!check_map(info->tab))
+	{
+		if (++info->round > 6)
+			if (parse_win(info))
+				break ;
+		i.y = 5;
+		print_player_line(info, i.x);
+		info->choix = check_col_num(info, &i);
+		while (info->tab[i.y][ft_atoi(info->choix) - 1] != 0)
+			info->choix = check_col_choice(info, &i);
+		info->tab[i.y][ft_atoi(info->choix) - 1] = i.x;
+		free(info->choix);
+		print(info->tab);
+		i.x = (i.x++ % 2 == 0) ? 1 : i.x;
+	}
+	return (ft_restart(info));
+}
+
 int			main(void)
 {
 	t_info	info;
-	t_coord	i;
 
-	info.round = -1;
-	i.x = 1;
 	player_creation(&info);
-	creation(info.tab);
-	print(info.tab);
-	while (!check_map(info.tab))
-	{
-		if (++info.round > 6)
-			parse_win(&info);
-		i.y = 5;
-		print_player_line(&info, i.x);
-		info.choix = check_col_num(&info, &i);
-		while (info.tab[i.y][ft_atoi(info.choix) - 1] != 0)
-			info.choix = check_col_choice(&info, &i);
-		info.tab[i.y][ft_atoi(info.choix) - 1] = i.x;
-		free(info.choix);
-		print(info.tab);
-		i.x = (i.x++ % 2 == 0) ? 1 : i.x;
-	}
+	while (ft_puissance4(&info) == 0)
+		ft_puissance4(&info);
 	return (0);
 }
