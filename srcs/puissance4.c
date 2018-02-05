@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   puissance4.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/01 18:23:00 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/02 14:21:36 by lguiller         ###   ########.fr       */
+/*   Created: 2018/02/05 14:03:19 by lguiller          #+#    #+#             */
+/*   Updated: 2018/02/05 14:04:05 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int			main(void)
 		print_player_line(&info, i.x);
 		info.choix = check_col_num(&info, &i);
 		while (info.tab[i.y][ft_atoi(info.choix) - 1] != 0)
-				info.choix = check_col_choice(&info, &i);
+			info.choix = check_col_choice(&info, &i);
 		info.tab[i.y][ft_atoi(info.choix) - 1] = i.x;
 		free(info.choix);
 		print(info.tab);
