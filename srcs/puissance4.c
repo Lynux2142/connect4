@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:19 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/05 14:52:56 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/02/05 15:33:06 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,11 @@ int			ft_puissance4(t_info *info)
 int			main(void)
 {
 	t_info	info;
+	int		restart;
 
 	player_creation(&info);
-	while (ft_puissance4(&info) == 0)
-		ft_puissance4(&info);
+	restart = ft_puissance4(&info);
+	while (restart == 0)
+		restart = ft_puissance4(&info);
 	return (0);
 }
