@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:19 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/05 15:33:06 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/02/05 16:11:28 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,7 @@ int			main(void)
 	restart = ft_puissance4(&info);
 	while (restart == 0)
 		restart = ft_puissance4(&info);
+	ft_memdel((void **)&info.j1);
+	ft_memdel((void **)&info.j2);
 	return (0);
 }
