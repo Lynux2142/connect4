@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:03 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/05 14:55:09 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/02/06 14:49:49 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_win(t_info *info, int joueur)
 {
-	ft_putstr("\n Bravo ! le joueur ");
+	ft_putstr("\n Well ! Player ");
 	if (joueur == 1)
 	{
 		ft_putstr(info->j1);
@@ -25,7 +25,7 @@ void	print_win(t_info *info, int joueur)
 		ft_putstr(info->j2);
 		ft_putstr(" (o)");
 	}
-	ft_putendl(" gagne !");
+	ft_putendl(" win !");
 }
 
 void	print(int tab[6][7])
@@ -56,7 +56,7 @@ void	print(int tab[6][7])
 
 void	print_player_line(t_info *info, int i)
 {
-	ft_putstr("\n Joueur ");
+	ft_putstr("\n Player ");
 	if (i == 1)
 	{
 		ft_putstr(info->j1);

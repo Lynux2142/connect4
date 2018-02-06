@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:02:36 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/05 15:11:41 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/02/06 14:46:02 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		check_map(int tab[6][7])
 			if (tab[i.y][i.x] == 0)
 				return (0);
 	}
-	ft_putendl("\n Egalite !");
+	ft_putendl("\n Draw !");
 	return (1);
 }
 
@@ -36,7 +36,7 @@ char	*check_col_num(t_info *info, t_coord *i)
 	while (ft_atoi(choix) < 1 || ft_atoi(choix) > 7)
 	{
 		print(info->tab);
-		ft_putstr("\nVeuillez entrer un chiffre entre 1 et 7");
+		ft_putstr("\nPlease enter a number between 1 and 7");
 		free(choix);
 		print_player_line(info, i->x);
 		get_next_line(0, &choix);
@@ -49,7 +49,7 @@ char	*check_col_choice(t_info *info, t_coord *i)
 	if (--i->y < 0)
 	{
 		print(info->tab);
-		ft_putstr("\nVeuillez choisir une autre colone");
+		ft_putstr("\nPlease choose an other column");
 		free(info->choix);
 		print_player_line(info, i->x);
 		info->choix = check_col_num(info, i);

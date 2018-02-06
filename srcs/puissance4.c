@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:19 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/05 16:11:28 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/02/06 14:48:25 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ static void	creation(int tab[6][7])
 
 static void	player_creation(t_info *info)
 {
-	ft_putstr("pseudo joueur 1: ");
+	ft_putstr("Pseudo player 1: ");
 	get_next_line(0, &info->j1);
-	ft_putstr("pseudo joueur 2: ");
+	ft_putstr("Pseudo player 2: ");
 	get_next_line(0, &info->j2);
 }
 
