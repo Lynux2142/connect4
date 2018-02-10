@@ -1,47 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   test2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/05 17:46:01 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/10 10:57:38 by lguiller         ###   ########.fr       */
+/*   Created: 2018/02/10 10:57:15 by lguiller          #+#    #+#             */
+/*   Updated: 2018/02/10 11:27:59 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "puissance4.h"
-
-int		ft_rand(int a)
-{
-	int			reslut;
-	static int	i;
-	int			tab[7] = {1, 2, 3, 4, 5, 6, 7};
-
-	if (i == 1)
-		reslut = tab[7 - a];
-	else if (i == 0)
-	{
-		if ((reslut = a + 3) > 7)
-			reslut -= 7;
-	}
-	else
-		reslut = a;
-	if (++i == 3)
-		i = 0;
-	return (reslut);
-}
+#include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <time.h>
 
 int		main(void)
 {
-	char	*a;
 	int		i;
+	int		x;
+	int		average;
 
-	while (get_next_line(0, &a))
+	srand(time(NULL));
+	x = 1;
+	average = 0;
+	while (x <= (6 * 7))
 	{
-		i = ft_atoi(a);
-		ft_putnbr(ft_rand(i));
-		ft_putchar('\n');
+		i = rand() % 7 + 1;
+		average += i;
+		printf("chiffre: %d  -  moyenne: %lf\n", i, (double)average / (double)x);
+		++x;
 	}
 	return (0);
 }
