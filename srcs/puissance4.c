@@ -33,12 +33,12 @@ static void	player_creation(t_info *info)
 	get_next_line(0, &info->j2);
 }
 
-int			ft_puissance4(t_info *info)
+int			ft_puissance4(t_info *info, int first)
 {
 	t_coord	i;
 
 	info->round = -1;
-	i.x = 1;
+	i.x = first;
 	creation(info->tab);
 	print(info->tab);
 	while (!check_map(info->tab))
@@ -63,11 +63,16 @@ int			main(void)
 {
 	t_info	info;
 	int		restart;
+	int		first;
 
+	first = 1;
 	player_creation(&info);
-	restart = ft_puissance4(&info);
+	restart = ft_puissance4(&info, first);
 	while (restart == 0)
-		restart = ft_puissance4(&info);
+	{
+		first = (first == 1) ? 2 : 1;
+		restart = ft_puissance4(&info, first);
+	}
 	ft_memdel((void **)&info.j1);
 	ft_memdel((void **)&info.j2);
 	return (0);

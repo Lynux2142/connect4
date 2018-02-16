@@ -59,7 +59,7 @@ _SHOW_CURS	=$ \033[?25h
 ##   TARGETS    ##
 ##################
 
-.PHONY: all clean
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
