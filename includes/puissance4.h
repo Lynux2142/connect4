@@ -16,6 +16,11 @@
 # include "libft.h"
 # include <stdlib.h>
 
+# define YELLOW "\033[33m"
+# define RED "\033[31m"
+# define BLUE "\033[34m"
+# define END "\033[0m"
+
 typedef struct	s_coord
 {
 	int			x;
@@ -39,8 +44,8 @@ int				check_map(int tab[6][7]);
 char			*check_col_num(t_info *info, t_coord *i);
 char			*check_col_choice(t_info *info, t_coord *i);
 int				ft_restart(t_info *info);
-void			print_croix(void);
-void			print_rond(void);
+void			print_yellow(void);
+void			print_red(void);
 void			print_map(void);
 void			print_top(void);
 

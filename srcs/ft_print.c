@@ -17,13 +17,15 @@ void	print_win(t_info *info, int joueur)
 	ft_putstr("\n Well ! Player ");
 	if (joueur == 1)
 	{
+		ft_putstr(YELLOW);
 		ft_putstr(info->j1);
-		ft_putstr(" (x)");
+		ft_putstr(END);
 	}
 	else if (joueur == 2)
 	{
+		ft_putstr(RED);
 		ft_putstr(info->j2);
-		ft_putstr(" (o)");
+		ft_putstr(END);
 	}
 	ft_putendl(" win !");
 }
@@ -44,9 +46,9 @@ void	print(int tab[6][7])
 			if (tab[i.y][i.x] == 0)
 				ft_putchar(' ');
 			else if (tab[i.y][i.x] == 1)
-				print_croix();
+				print_yellow();
 			else if (tab[i.y][i.x] == 2)
-				print_rond();
+				print_red();
 			print_map();
 		}
 		ft_putchar('\n');
@@ -59,13 +61,15 @@ void	print_player_line(t_info *info, int i)
 	ft_putstr("\n Player ");
 	if (i == 1)
 	{
+		ft_putstr(YELLOW);
 		ft_putstr(info->j1);
-		ft_putstr(" (x)");
+		ft_putstr(END);
 	}
 	else if (i == 2)
 	{
+		ft_putstr(RED);
 		ft_putstr(info->j2);
-		ft_putstr(" (o)");
+		ft_putstr(END);
 	}
 	ft_putstr(": ");
 }

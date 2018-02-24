@@ -12,30 +12,30 @@
 
 #include "puissance4.h"
 
-void	print_croix(void)
+void	print_yellow(void)
 {
-	ft_putstr("\033[33m");
-	ft_putchar('x');
-	ft_putstr("\033[0m");
+	ft_putstr(YELLOW);
+	ft_putchar('O');
+	ft_putstr(END);
 }
 
-void	print_rond(void)
+void	print_red(void)
 {
-	ft_putstr("\033[31m");
-	ft_putchar('o');
-	ft_putstr("\033[0m");
+	ft_putstr(RED);
+	ft_putchar('O');
+	ft_putstr(END);
 }
 
 void	print_map(void)
 {
-	ft_putstr("\033[34m");
+	ft_putstr(BLUE);
 	ft_putchar('|');
-	ft_putstr("\033[0m");
+	ft_putstr(END);
 }
 
 void	print_top(void)
 {
-	ft_putstr("\033[34m");
+	ft_putstr(BLUE);
 	ft_putendl(" _ _ _ _ _ _ _");
-	ft_putstr("\033[0m");
+	ft_putstr(END);
 }
