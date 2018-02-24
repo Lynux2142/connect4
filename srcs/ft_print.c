@@ -58,18 +58,18 @@ void	print(int tab[6][7])
 
 void	print_player_line(t_info *info, int i)
 {
-	ft_putstr("\n Player ");
 	if (i == 1)
 	{
 		ft_putstr(YELLOW);
+		ft_putstr("\n Player ");
 		ft_putstr(info->j1);
-		ft_putstr(END);
 	}
 	else if (i == 2)
 	{
 		ft_putstr(RED);
+		ft_putstr("\n Player ");
 		ft_putstr(info->j2);
-		ft_putstr(END);
 	}
 	ft_putstr(": ");
+	ft_putstr(END);
 }
