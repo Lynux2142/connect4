@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_rounded_to_mult.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 10:09:55 by lguiller          #+#    #+#             */
-/*   Updated: 2018/03/15 10:05:10 by lguiller         ###   ########.fr       */
+/*   Created: 2018/04/20 09:30:13 by lguiller          #+#    #+#             */
+/*   Updated: 2018/05/21 11:23:04 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+double	ft_roundmsup(double nb, int mult)
 {
-	char	*str_dst;
-	char	*str_src;
-	size_t	i;
+	int n;
 
-	str_dst = (char *)dst;
-	str_src = (char *)src;
-	i = -1;
-	while (++i < n)
-		*(str_dst + i) = *(str_src + i);
-	return (str_dst);
+	n = (int)ceil(nb);
+	while ((n % mult) != 0)
+		++n;
+	return ((double)n);
+}
+
+double	ft_roundminf(double nb, int mult)
+{
+	int n;
+
+	n = (int)floor(nb);
+	while ((n % mult) != 0)
+		--n;
+	return ((double)n);
 }

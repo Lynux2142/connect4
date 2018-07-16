@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:19 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/06 14:48:25 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/07/16 10:27:20 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int			ft_puissance4(t_info *info, int first)
 	info->round = -1;
 	i.x = first;
 	creation(info->tab);
+	ft_clear();
 	print(info->tab);
 	while (!check_map(info->tab))
 	{
@@ -53,6 +54,7 @@ int			ft_puissance4(t_info *info, int first)
 			info->choix = check_col_choice(info, &i);
 		info->tab[i.y][ft_atoi(info->choix) - 1] = i.x;
 		free(info->choix);
+		ft_clear();
 		print(info->tab);
 		i.x = (i.x++ % 2 == 0) ? 1 : i.x;
 	}

@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 10:09:55 by lguiller          #+#    #+#             */
-/*   Updated: 2018/03/15 10:05:10 by lguiller         ###   ########.fr       */
+/*   Created: 2018/01/18 15:14:48 by lguiller          #+#    #+#             */
+/*   Updated: 2018/04/23 11:35:49 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int		ft_pow(int nbr, int power)
 {
-	char	*str_dst;
-	char	*str_src;
-	size_t	i;
+	int value;
+	int i;
 
-	str_dst = (char *)dst;
-	str_src = (char *)src;
+	value = 1;
 	i = -1;
-	while (++i < n)
-		*(str_dst + i) = *(str_src + i);
-	return (str_dst);
+	while (++i < power)
+		value *= nbr;
+	return (value);
+}
+
+double	ft_fpow(double nbr, int power)
+{
+	int value;
+	int i;
+
+	value = 1.0;
+	i = -1;
+	while (++i < power)
+		value *= nbr;
+	return (value);
 }

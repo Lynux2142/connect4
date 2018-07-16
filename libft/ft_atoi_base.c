@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 13:16:40 by lguiller          #+#    #+#             */
-/*   Updated: 2018/01/29 18:15:08 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/04/23 11:38:21 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ int			ft_atoi_base(const char *str, int base)
 	while (nb_len >= stop)
 	{
 		if (str[nb_len] >= 'a' && str[nb_len] <= 'z')
-			value += (((str[nb_len--] - 'a') + 10) * ft_power(base, i++));
+			value += (((str[nb_len--] - 'a') + 10) * ft_pow(base, i++));
 		if (str[nb_len] >= '0' && str[nb_len] <= '9')
-			value += ((str[nb_len--] - '0') * ft_power(base, i++));
+			value += ((str[nb_len--] - '0') * ft_pow(base, i++));
 	}
 	return (value);
 }

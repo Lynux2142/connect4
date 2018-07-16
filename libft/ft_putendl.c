@@ -6,13 +6,13 @@
 /*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 13:39:34 by lguiller          #+#    #+#             */
-/*   Updated: 2017/12/13 11:28:10 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/03/29 09:16:29 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+void	ft_putendl(const char *s)
 {
 	if (s != NULL)
 		ft_putendl_fd(s, 1);

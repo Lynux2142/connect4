@@ -6,13 +6,11 @@
 /*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 15:24:31 by lguiller          #+#    #+#             */
-/*   Updated: 2018/01/18 15:18:25 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/05/31 13:39:07 by bede-fre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
-#include <stdlib.h>
 
 static t_list	*ft_check(t_list **list, size_t fd)
 {

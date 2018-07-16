@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_remove_whitespaces.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bede-fre <bede-fre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 10:09:55 by lguiller          #+#    #+#             */
-/*   Updated: 2018/03/15 10:05:10 by lguiller         ###   ########.fr       */
+/*   Created: 2018/06/20 17:42:28 by bede-fre          #+#    #+#             */
+/*   Updated: 2018/06/20 17:45:15 by bede-fre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_remove_whitespaces(char *str)
 {
-	char	*str_dst;
-	char	*str_src;
-	size_t	i;
+	int	i;
+	int	j;
+	int	tmp;
 
-	str_dst = (char *)dst;
-	str_src = (char *)src;
 	i = -1;
-	while (++i < n)
-		*(str_dst + i) = *(str_src + i);
-	return (str_dst);
+	while (str[++i])
+	{
+		j = i;
+		tmp = i;
+		while (ft_isspace(str[j]))
+			++j;
+		while (str[j])
+		{
+			str[tmp] = str[j];
+			++tmp;
+			++j;
+		}
+		while (str[tmp])
+		{
+			str[tmp] = '\0';
+			++tmp;
+		}
+	}
 }

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_clear.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 10:09:55 by lguiller          #+#    #+#             */
-/*   Updated: 2018/03/15 10:05:10 by lguiller         ###   ########.fr       */
+/*   Created: 2018/07/16 10:13:41 by lguiller          #+#    #+#             */
+/*   Updated: 2018/07/16 10:25:08 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_clear(void)
 {
-	char	*str_dst;
-	char	*str_src;
-	size_t	i;
+/*	int	i;
 
-	str_dst = (char *)dst;
-	str_src = (char *)src;
 	i = -1;
-	while (++i < n)
-		*(str_dst + i) = *(str_src + i);
-	return (str_dst);
+	while (i++ < NBLIGCLS)
+		ft_putchar('\n');*/
+	system("clear");
 }

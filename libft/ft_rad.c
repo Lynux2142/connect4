@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_rad.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bede-fre <bede-fre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 10:09:55 by lguiller          #+#    #+#             */
-/*   Updated: 2018/03/15 10:05:10 by lguiller         ###   ########.fr       */
+/*   Created: 2018/06/05 11:48:09 by bede-fre          #+#    #+#             */
+/*   Updated: 2018/06/05 12:09:43 by bede-fre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+double	ft_rad(double x)
 {
-	char	*str_dst;
-	char	*str_src;
-	size_t	i;
-
-	str_dst = (char *)dst;
-	str_src = (char *)src;
-	i = -1;
-	while (++i < n)
-		*(str_dst + i) = *(str_src + i);
-	return (str_dst);
+	return (x * M_PI / 180.0);
 }

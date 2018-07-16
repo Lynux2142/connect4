@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:02:36 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/06 14:46:02 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/07/16 10:29:59 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ char	*check_col_num(t_info *info, t_coord *i)
 	get_next_line(0, &choix);
 	while (ft_atoi(choix) < 1 || ft_atoi(choix) > 7)
 	{
+		ft_clear();
 		print(info->tab);
 		ft_putstr("\nPlease enter a number between 1 and 7");
 		free(choix);
@@ -48,6 +49,7 @@ char	*check_col_choice(t_info *info, t_coord *i)
 {
 	if (--i->y < 0)
 	{
+		ft_clear();
 		print(info->tab);
 		ft_putstr("\nPlease choose an other column");
 		free(info->choix);

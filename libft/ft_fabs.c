@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_power.c                                         :+:      :+:    :+:   */
+/*   ft_fabs.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/18 15:14:48 by lguiller          #+#    #+#             */
-/*   Updated: 2018/01/18 15:16:51 by lguiller         ###   ########.fr       */
+/*   Created: 2018/04/11 11:51:59 by lguiller          #+#    #+#             */
+/*   Updated: 2018/04/11 11:52:01 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_power(int nbr, int power)
+double	ft_fabs(double nb)
 {
-	int value;
-	int i;
-
-	value = 1;
-	i = -1;
-	while (++i < power)
-		value *= nbr;
-	return (value);
+	return ((nb < 0.0) ? -nb : nb);
 }
