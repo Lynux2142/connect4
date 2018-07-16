@@ -6,7 +6,7 @@
 /*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 10:13:41 by lguiller          #+#    #+#             */
-/*   Updated: 2018/07/16 10:25:08 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/07/16 10:33:47 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 void	ft_clear(void)
 {
-/*	int	i;
-
-	i = -1;
-	while (i++ < NBLIGCLS)
-		ft_putchar('\n');*/
 	system("clear");
 }
