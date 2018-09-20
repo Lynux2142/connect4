@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:36 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/20 18:38:56 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/20 20:17:50 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,13 +98,7 @@ typedef struct	s_all
 }				t_all;
 
 void			print_win(t_info *info, int joueur);
-void			print(int tab[6][7]);
-void			print_player_line(t_info *info, int i);
 int				ft_restart(t_info *info);
-void			print_yellow(void);
-void			print_red(void);
-void			print_map(void);
-void			print_top(void);
 void			ft_circle(t_img *img, t_circle circle);
 void			ft_round(t_img *img, t_circle circle);
 void			ft_rect(t_img *img, t_rect rect);
