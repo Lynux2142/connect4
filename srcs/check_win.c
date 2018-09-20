@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:02:44 by lguiller          #+#    #+#             */
-/*   Updated: 2018/02/05 16:10:54 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/20 15:24:08 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	check_line(t_info *inf, t_coord i)
 
 static int	check_column(t_info *inf, t_coord i)
 {
-	if (i.y <= 2 && inf->tab[i.y][i.x] == inf->tab[i.y + 1][i.x]
+	if (	i.y <= 2 && inf->tab[i.y][i.x] == inf->tab[i.y + 1][i.x]
 			&& inf->tab[i.y + 1][i.x] == inf->tab[i.y + 2][i.x]
 			&& inf->tab[i.y + 2][i.x] == inf->tab[i.y + 3][i.x])
 	{
@@ -60,7 +60,7 @@ static int	check_diagonal_right(t_info *inf, t_coord i)
 	return (0);
 }
 
-int			parse_win(t_info *info)
+int			ft_parse_win(t_info *info)
 {
 	t_coord	i;
 

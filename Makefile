@@ -6,7 +6,7 @@
 #    By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/16 12:18:12 by lguiller          #+#    #+#              #
-#    Updated: 2018/09/20 11:31:07 by lguiller         ###   ########.fr        #
+#    Updated: 2018/09/20 15:22:49 by lguiller         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@
 
 OPE_SYS			= $(shell uname)
 NAME			= connect4
-SRCS1			= main.c ft_print.c ft_check_win.c \
-				  ft_check_error.c ft_color.c ft_restart.c
+SRCS1			= main.c ft_print.c ft_color.c ft_restart.c ft_fill_pixel.c \
+				  shape.c input.c refresh.c check_win.c
 SRCS			= $(addprefix $(SRCS_DIR), $(SRCS1))
 OBJS			= $(addprefix $(OBJS_DIR), $(SRCS1:.c=.o))
 SRCS_DIR		= srcs/

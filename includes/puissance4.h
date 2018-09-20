@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:36 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/20 11:57:01 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/20 15:23:11 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,34 @@
 # define WINX		1000
 # define WINY		850
 # define GAMEX		WINX
-# define GAMEY		WINY - 50
 # define HUD1X		WINX / 2
-# define HUD1Y		50
+# define HUD1Y		100
+# define GAMEY		WINY - HUD1Y
 # define HUD2X		WINX / 2
-# define HUD2Y		50
-# define BOARD		"./images/board.xpm"
-# define RCOIN		"./images/red_coin.xpm"
-# define YCOIN		"./images/yellow_coin.xpm"
+# define HUD2Y		HUD1Y
 
 typedef struct	s_coord
 {
 	int			x;
 	int			y;
 }				t_coord;
+
+typedef struct	s_rect
+{
+	int			x;
+	int			y;
+	int			width;
+	int			lenght;
+	int			col;
+}				t_rect;
+
+typedef struct	s_circle
+{
+	int			x;
+	int			y;
+	int			r;
+	int			col;
+}				t_circle;
 
 typedef struct	s_img
 {
@@ -66,19 +80,30 @@ typedef struct	s_info
 	int			round;
 	char		*j1;
 	char		*j2;
+	int			tour;
 }				t_info;
 
-int				parse_win(t_info *info);
+typedef struct	s_all
+{
+	t_info		info;
+	t_mlx		ptr;
+	t_circle	circle;
+}				t_all;
+
 void			print_win(t_info *info, int joueur);
 void			print(int tab[6][7]);
 void			print_player_line(t_info *info, int i);
-int				check_map(int tab[6][7]);
-char			*check_col_num(t_info *info, t_coord *i);
-char			*check_col_choice(t_info *info, t_coord *i);
 int				ft_restart(t_info *info);
 void			print_yellow(void);
 void			print_red(void);
 void			print_map(void);
 void			print_top(void);
+void			ft_circle(t_img *img, t_circle circle);
+void			ft_round(t_img *img, t_circle circle);
+void			ft_rect(t_img *img, t_rect rect);
+void			ft_fill_pixel(t_img *img, int x, int y, int col);
+int				ft_keyboard(int key, t_info *info);
+int				ft_refresh(t_all *all);
+int				ft_parse_win(t_info *info);
 
 #endif
