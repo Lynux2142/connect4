@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   puissance4.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:19 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/20 14:58:03 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/20 20:12:39 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 static void	creation(int tab[6][7])
 {
-	t_coord	i;
+	int	x;
+	int	y;
 
-	i.y = -1;
-	while (++i.y < 7)
+	y = -1;
+	while (++y < 6)
 	{
-		i.x = -1;
-		while (++i.x < 6)
-			tab[i.y][i.x] = 0xFFFFFF;
+		x = -1;
+		while (++x < 7)
+			tab[y][x] = 0xFFFFFF;
 	}
 }
 
@@ -33,11 +34,14 @@ static void	player_creation(t_info *info)
 	get_next_line(0, &info->j2);
 }
 
-int			ft_draw(t_all all)
+int			main(void)
 {
+	t_all		all;
 	t_mlx		ptr;
 	t_rect		rect;
 
+	creation(all.info.tab);
+	player_creation(&all.info);
 	ptr.mlx = mlx_init();
 	ptr.win = mlx_new_window(ptr.mlx, WINX, WINY, "connect 4");
 	ptr.game.img = mlx_new_image(ptr.mlx, GAMEX, GAMEY);
@@ -66,17 +70,4 @@ int			ft_draw(t_all all)
 	mlx_loop_hook(ptr.mlx, ft_refresh, &all);
 	mlx_hook(ptr.win, 2, (1L << 0), ft_keyboard, &all.info);
 	mlx_loop(ptr.mlx);
-	return (0);
-}
-
-int			main(void)
-{
-	t_all	all;
-	int		first;
-
-	first = 0xFFFF00;
-	player_creation(&all.info);
-	creation(all.info.tab);
-	ft_draw(all);
-	return (0);
 }

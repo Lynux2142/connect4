@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:36 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/20 15:23:11 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/20 18:38:56 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@
 # define GAMEY		WINY - HUD1Y
 # define HUD2X		WINX / 2
 # define HUD2Y		HUD1Y
+# define KEY_1		18
+# define KEY_2		19
+# define KEY_3		20
+# define KEY_4		21
+# define KEY_5		23
+# define KEY_6		22
+# define KEY_7		26
 
 typedef struct	s_coord
 {
