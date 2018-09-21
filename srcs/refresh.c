@@ -6,7 +6,7 @@
 /*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 14:34:35 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/20 20:06:14 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 12:24:50 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ int		ft_refresh(t_all *all)
 		all->circle.y += (3 * all->circle.r);
 	}
 	mlx_put_image_to_window(all->ptr.mlx, all->ptr.win, all->ptr.game.img, 0, 0);
+	if (all->info.menu == 1)
+		ft_make_menu(&all->ptr, &all->ptr.menu);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 13:15:39 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/20 13:37:54 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 11:31:55 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void		ft_rect(t_img *img, t_rect rect)
 	int	y;
 
 	y = -1;
-	while (++y <= rect.lenght)
+	while (++y < rect.lenght)
 	{
 		x = -1;
-		while (++x <= rect.width)
+		while (++x < rect.width)
 			ft_fill_pixel(img, x + rect.x, y + rect.y, rect.col);
 	}
 }

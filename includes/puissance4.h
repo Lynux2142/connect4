@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:36 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/20 20:17:50 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 12:47:42 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUISSANCE4_H
 
 # include "libft.h"
-#include "mlx.h"
+# include "mlx.h"
 # include <stdlib.h>
 
 # define YELLOW		"\033[33m"
@@ -23,12 +23,14 @@
 # define END		"\033[0m"
 # define WINX		1000
 # define WINY		850
-# define GAMEX		WINX
 # define HUD1X		WINX / 2
 # define HUD1Y		100
-# define GAMEY		WINY - HUD1Y
 # define HUD2X		WINX / 2
 # define HUD2Y		HUD1Y
+# define GAMEX		WINX
+# define GAMEY		WINY - HUD1Y
+# define MENUX		400
+# define MENUY		200
 # define KEY_1		18
 # define KEY_2		19
 # define KEY_3		20
@@ -78,6 +80,7 @@ typedef struct	s_mlx
 	t_img		game;
 	t_img		hud1;
 	t_img		hud2;
+	t_img		menu;
 }				t_mlx;
 
 typedef struct	s_info
@@ -88,6 +91,7 @@ typedef struct	s_info
 	char		*j1;
 	char		*j2;
 	int			tour;
+	int			menu;;
 }				t_info;
 
 typedef struct	s_all
@@ -104,7 +108,10 @@ void			ft_round(t_img *img, t_circle circle);
 void			ft_rect(t_img *img, t_rect rect);
 void			ft_fill_pixel(t_img *img, int x, int y, int col);
 int				ft_keyboard(int key, t_info *info);
+int				ft_mouse(int x, int y, int button, t_info *info);
 int				ft_refresh(t_all *all);
 int				ft_parse_win(t_info *info);
+void			ft_make_menu(t_mlx *ptr, t_img *menu);
+void			ft_creation(int tab[6][7]);
 
 #endif
