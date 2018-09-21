@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   puissance4.h                                       :+:      :+:    :+:   */
+/*   connect4.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:36 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/21 12:47:42 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 17:43:50 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,9 @@ typedef struct	s_info
 	char		*choix;
 	int			tab[6][7];
 	int			round;
-	char		*j1;
-	char		*j2;
 	int			tour;
 	int			menu;;
+	int			first;
 }				t_info;
 
 typedef struct	s_all
@@ -111,7 +110,7 @@ int				ft_keyboard(int key, t_info *info);
 int				ft_mouse(int x, int y, int button, t_info *info);
 int				ft_refresh(t_all *all);
 int				ft_parse_win(t_info *info);
-void			ft_make_menu(t_mlx *ptr, t_img *menu);
+void			ft_make_menu(t_mlx *ptr, t_info *info, t_img *menu);
 void			ft_creation(int tab[6][7]);
 
 #endif

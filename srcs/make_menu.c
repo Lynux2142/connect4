@@ -6,17 +6,18 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 11:07:43 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/21 17:29:14 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 17:50:13 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "connect4.h"
 
-void		ft_make_menu(t_mlx *ptr, t_img *menu)
+void		ft_make_menu(t_mlx *ptr, t_info *info, t_img *menu)
 {
 	t_rect	back;
 	t_rect	button1;
 	t_rect	button2;
+	int		player;
 
 	back.x = 0;
 	back.y = 0;
@@ -39,5 +40,12 @@ void		ft_make_menu(t_mlx *ptr, t_img *menu)
 	mlx_put_image_to_window(ptr->mlx, ptr->win, ptr->menu.img, 300, 275);
 	mlx_string_put(ptr->mlx, ptr->win, 385, 410, 0, "QUIT");
 	mlx_string_put(ptr->mlx, ptr->win, 560, 410, 0, "RESTART");
-//	mlx_string_put(ptr->mlx, ptr->win, 385, 325, 0xFFFFFF, "WELL ! PLAYER *** WIN !");
+	if ((player = ft_parse_win(info)))
+	{
+		if (player == 0xFFFF00)
+			mlx_string_put(ptr->mlx, ptr->win, 385, 325, 0xFFFFFF, "WELL ! YELLOW WIN !");
+		else
+			mlx_string_put(ptr->mlx, ptr->win, 385, 325, 0xFFFFFF, "WELL ! RED WIN !");
+	}
+	info->tour = info->first;
 }

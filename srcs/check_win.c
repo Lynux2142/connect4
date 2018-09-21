@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:02:44 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/21 13:01:10 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 17:31:35 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int			ft_parse_win(t_info *info)
 				|| check_column(info, i)
 				|| check_diagonal_left(info, i)
 				|| check_diagonal_right(info, i))
-					return (1);
+					return (info->tab[i.y][i.x]);
 			}
 		}
 	}
