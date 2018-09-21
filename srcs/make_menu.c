@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 11:07:43 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/21 12:56:12 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 17:29:14 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ void		ft_make_menu(t_mlx *ptr, t_img *menu)
 	mlx_put_image_to_window(ptr->mlx, ptr->win, ptr->menu.img, 300, 275);
 	mlx_string_put(ptr->mlx, ptr->win, 385, 410, 0, "QUIT");
 	mlx_string_put(ptr->mlx, ptr->win, 560, 410, 0, "RESTART");
-	mlx_string_put(ptr->mlx, ptr->win, 385, 325, 0xFFFFFF, "WELL ! PLAYER *** WIN !");
+//	mlx_string_put(ptr->mlx, ptr->win, 385, 325, 0xFFFFFF, "WELL ! PLAYER *** WIN !");
 }
