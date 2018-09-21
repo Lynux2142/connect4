@@ -6,11 +6,11 @@
 /*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 13:15:39 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/21 11:31:55 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 12:56:27 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "puissance4.h"
+#include "connect4.h"
 
 void		ft_rect(t_img *img, t_rect rect)
 {

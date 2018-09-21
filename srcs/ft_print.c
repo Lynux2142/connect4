@@ -6,11 +6,11 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:03 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/20 20:16:59 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 12:55:37 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "puissance4.h"
+#include "connect4.h"
 
 void	print_win(t_info *info, int joueur)
 {

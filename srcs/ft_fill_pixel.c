@@ -6,11 +6,11 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 08:21:57 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/21 11:33:03 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 12:55:30 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "puissance4.h"
+#include "connect4.h"
 
 void		ft_fill_pixel(t_img *img, int x, int y, int col)
 {

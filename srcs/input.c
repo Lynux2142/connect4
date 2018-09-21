@@ -6,11 +6,11 @@
 /*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 14:14:47 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/21 12:52:26 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 13:02:42 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "puissance4.h"
+#include "connect4.h"
 
 int		ft_keyboard(int key, t_info *info)
 {
@@ -31,11 +31,9 @@ int		ft_keyboard(int key, t_info *info)
 		x = 5;
 	if (key == KEY_7)
 		x = 6;
-	if (ft_parse_win(info))
-		info->menu = 1;
 	y = 5;
 	if ((key == KEY_1 || key == KEY_2 || key == KEY_3 || key == KEY_4 ||
-	key == KEY_5 || key == KEY_6 || key == KEY_7) && !info->menu)
+	key == KEY_5 || key == KEY_6 || key == KEY_7) && !info->menu && !ft_parse_win(info))
 	{
 		while (y >= 0 && info->tab[y][x] != 0xFFFFFF)
 			--y;

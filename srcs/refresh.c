@@ -6,11 +6,11 @@
 /*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 14:34:35 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/21 12:24:50 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 12:56:20 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "puissance4.h"
+#include "connect4.h"
 
 int		ft_refresh(t_all *all)
 {

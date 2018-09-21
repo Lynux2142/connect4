@@ -6,11 +6,16 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:19 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/21 12:48:07 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 13:04:44 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "puissance4.h"
+#include "connect4.h"
+
+int			ft_quit(void)
+{
+	exit(0);
+}
 
 void		ft_creation(int tab[6][7])
 {
@@ -76,6 +81,7 @@ int			main(void)
 	game.col = 0xFF;
 	ft_rect(&all.ptr.game, game);
 	mlx_loop_hook(all.ptr.mlx, ft_refresh, &all);
+	mlx_hook(all.ptr.win, 17, 0L, ft_quit, 0);
 	mlx_hook(all.ptr.win, 2, (1L << 0), ft_keyboard, &all.info);
 	mlx_hook(all.ptr.win, 4, (1L << 2), ft_mouse, &all.info);
 	mlx_loop(all.ptr.mlx);

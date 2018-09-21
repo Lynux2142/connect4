@@ -6,11 +6,11 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 11:07:43 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/21 12:19:47 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/21 12:56:12 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "puissance4.h"
+#include "connect4.h"
 
 void		ft_make_menu(t_mlx *ptr, t_img *menu)
 {
