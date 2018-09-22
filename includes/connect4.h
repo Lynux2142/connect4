@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:36 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/21 17:43:50 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/22 10:25:26 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 # define GAMEY		WINY - HUD1Y
 # define MENUX		400
 # define MENUY		200
+# define MENU_POSX	300
+# define MENU_POSY	275
 # define KEY_1		18
 # define KEY_2		19
 # define KEY_3		20
@@ -83,13 +85,21 @@ typedef struct	s_mlx
 	t_img		menu;
 }				t_mlx;
 
+typedef struct	s_menu
+{
+	t_rect		back;
+	t_rect		button1;
+	t_rect		button2;
+}				t_menu;
+
 typedef struct	s_info
 {
+	t_menu		menu;
 	char		*choix;
 	int			tab[6][7];
 	int			round;
 	int			tour;
-	int			menu;;
+	int			active_menu;
 	int			first;
 }				t_info;
 
