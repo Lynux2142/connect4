@@ -6,7 +6,7 @@
 /*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 14:14:47 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/22 10:24:02 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/09/24 15:38:50 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ int		ft_mouse(int button, int x, int y, t_info *info)
 		{
 			ft_creation(info->tab);
 			info->active_menu = 0;
+			info->first = (info->first == 1) ? 2 : 1;
+			info->tour = info->first;
 		}
 	}
 	return (1);
