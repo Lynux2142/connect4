@@ -6,7 +6,7 @@
 /*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 14:34:35 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/22 10:18:59 by lguiller         ###   ########.fr       */
+/*   Updated: 2018/12/24 19:17:09 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,13 @@ int		ft_refresh(t_all *all)
 		all->circle.y += (3 * all->circle.r);
 	}
 	mlx_put_image_to_window(all->ptr.mlx, all->ptr.win, all->ptr.game.img, 0, 0);
+	mlx_string_put(all->ptr.mlx, all->ptr.win, 135, 725, 0xFFFFFF, "1");
+	mlx_string_put(all->ptr.mlx, all->ptr.win, 255, 725, 0xFFFFFF, "2");
+	mlx_string_put(all->ptr.mlx, all->ptr.win, 375, 725, 0xFFFFFF, "3");
+	mlx_string_put(all->ptr.mlx, all->ptr.win, 495, 725, 0xFFFFFF, "4");
+	mlx_string_put(all->ptr.mlx, all->ptr.win, 615, 725, 0xFFFFFF, "5");
+	mlx_string_put(all->ptr.mlx, all->ptr.win, 735, 725, 0xFFFFFF, "6");
+	mlx_string_put(all->ptr.mlx, all->ptr.win, 855, 725, 0xFFFFFF, "7");
 	if (all->info.active_menu == 1)
 		ft_make_menu(&all->ptr, &all->info, &all->ptr.menu);
 	return (1);
