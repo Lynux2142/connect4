@@ -6,12 +6,12 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:36 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/24 15:55:08 by lguiller         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:06:36 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUISSANCE4_H
-# define PUISSANCE4_H
+#ifndef CONNECT4_H
+# define CONNECT4_H
 
 # include "libft.h"
 # include "mlx.h"
