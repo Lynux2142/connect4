@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:36 by lguiller          #+#    #+#             */
-/*   Updated: 2019/01/23 15:18:43 by lguiller         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:21:23 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 #  define KEY_5		53
 #  define KEY_6		54
 #  define KEY_7		55
-#  define ESC		54
+#  define ESC		65307
 # else
 #  define KEY_1		18
 #  define KEY_2		19
