@@ -6,7 +6,7 @@
 /*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 14:14:47 by lguiller          #+#    #+#             */
-/*   Updated: 2019/01/23 14:52:51 by lguiller         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:18:08 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		ft_keyboard(int key, t_info *info)
 			++info->tour;
 		}
 	}
-	if (key == 53)
+	if (key == ESC)
 		info->active_menu = (info->active_menu == 1) ? 0 : 1;
 	return (1);
 }

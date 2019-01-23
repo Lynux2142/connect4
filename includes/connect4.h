@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:36 by lguiller          #+#    #+#             */
-/*   Updated: 2019/01/23 15:17:16 by lguiller         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:18:43 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@
 #  define KEY_5		23
 #  define KEY_6		22
 #  define KEY_7		26
-#  define ESC		54
+#  define ESC		53
 # endif
 
 typedef struct	s_coord
