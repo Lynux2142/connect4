@@ -6,7 +6,7 @@
 #    By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/16 12:18:12 by lguiller          #+#    #+#              #
-#    Updated: 2018/09/24 14:22:56 by lguiller         ###   ########.fr        #
+#    Updated: 2019/01/23 14:45:38 by lguiller         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 
 OPE_SYS			= $(shell uname)
 NAME			= connect4
-SRCS1			= main.c ft_restart.c ft_fill_pixel.c shape.c input.c \
+SRCS1			= main.c ft_fill_pixel.c shape.c input.c \
 				  refresh.c check_win.c make_menu.c
 SRCS			= $(addprefix $(SRCS_DIR), $(SRCS1))
 OBJS			= $(addprefix $(OBJS_DIR), $(SRCS1:.c=.o))

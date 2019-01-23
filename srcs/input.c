@@ -6,7 +6,7 @@
 /*   By: lguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 14:14:47 by lguiller          #+#    #+#             */
-/*   Updated: 2018/09/24 15:38:50 by lguiller         ###   ########.fr       */
+/*   Updated: 2019/01/23 14:52:51 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,7 @@ int		ft_keyboard(int key, t_info *info)
 		{
 			info->tab[y][x] = (info->tour % 2 == 0) ? 0xFF0000 : 0xFFFF00;
 			if (ft_parse_win(info))
-			{
 				info->active_menu = 1;
-				info->first = (info->first == 1) ? 2 : 1;
-			}
 			++info->tour;
 		}
 	}
