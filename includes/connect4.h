@@ -6,7 +6,7 @@
 /*   By: lguiller <lguiller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/05 14:03:36 by lguiller          #+#    #+#             */
-/*   Updated: 2019/01/23 15:06:36 by lguiller         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:17:16 by lguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,26 @@
 # define MENUY		200
 # define MENU_POSX	300
 # define MENU_POSY	275
-# define KEY_1		18
-# define KEY_2		19
-# define KEY_3		20
-# define KEY_4		21
-# define KEY_5		23
-# define KEY_6		22
-# define KEY_7		26
+
+# ifdef __linux__
+#  define KEY_1		49
+#  define KEY_2		50
+#  define KEY_3		51
+#  define KEY_4		52
+#  define KEY_5		53
+#  define KEY_6		54
+#  define KEY_7		55
+#  define ESC		54
+# else
+#  define KEY_1		18
+#  define KEY_2		19
+#  define KEY_3		20
+#  define KEY_4		21
+#  define KEY_5		23
+#  define KEY_6		22
+#  define KEY_7		26
+#  define ESC		54
+# endif
 
 typedef struct	s_coord
 {
