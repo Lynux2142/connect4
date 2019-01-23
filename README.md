@@ -15,3 +15,7 @@ git clone https://github.com/Lynux2142/connect4.git
 ```./connect4```
 
 ## Utilisation:
+
+* Chiffre 1 a 7 du clavier = choisir la colone
+
+* 'esc' = afficher le menu
